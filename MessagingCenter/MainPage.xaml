@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MessagingCenter.MainPage"
+             d:BindingContext="MainPageViewModel">
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior EventName="Loaded"
+                                        Command="{Binding LoadedCommand}" />
+        <toolkit:EventToCommandBehavior EventName="Unloaded"
+                                        Command="{Binding UnloadedCommand}" />
+    </ContentPage.Behaviors>
+
+    <StackLayout Margin="20,35,20,20">
+        <StackLayout.Resources>
+            <Style TargetType="Button">
+                <Setter Property="Margin" Value="0,5,0,5" />
+            </Style>
+        </StackLayout.Resources>
+        <Label Text="MessagingCenter Demo"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+        <Button Text="Say Hi"
+                Command="{Binding SayHiCommand}" />
+        <Button Text="Say Hi to John"
+                Command="{Binding SayHiToJohnCommand}" />
+        <Button
+            Command="{Binding SubscribeCommand}">
+            <Button.Triggers>
+                <DataTrigger TargetType="Button" Binding="{Binding IsActive}" Value="true">
+                    <Setter Property="Text" Value="Unsubscribe" />
+                </DataTrigger>
+                <DataTrigger TargetType="Button" Binding="{Binding IsActive}" Value="false">
+                    <Setter Property="Text" Value="Resubscribe" />
+                </DataTrigger>
+            </Button.Triggers>
+        </Button>
+        <ListView ItemsSource="{Binding Greetings}" />
+    </StackLayout>
+
+</ContentPage>
