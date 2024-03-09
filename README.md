@@ -1,6 +1,14 @@
 # maui-samples
 Samples built with .NET Multi-platform App UI (.NET MAUI).
 
+## Configuration Sample (MVVM)
+
+"How-To" for configuration support for:
+- appsettings.json
+- environment variables
+- commandline arguments
+- IConfiguration (through DI)
+- IOptions pattern (through DI)
 
 ## MessagingCenter
 
