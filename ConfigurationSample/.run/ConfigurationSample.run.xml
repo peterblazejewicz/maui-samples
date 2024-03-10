@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="ConfigurationSample" type="XamarinMacProject" factoryName="Xamarin.Mac">
+    <option name="PROJECT_PATH" value="$PROJECT_DIR$/ConfigurationSample/ConfigurationSample.csproj" />
+    <option name="PROGRAM_PARAMETERS" value="--args token=123TOKEN123" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ConfigurationSample/bin/Debug/net8.0-maccatalyst/maccatalyst-arm64" />
+    <option name="PASS_PARENT_ENVS_MAC" value="1" />
+    <envs>
+      <env name="SecretKey" value="123SECRET123" />
+    </envs>
+    <method v="2">
+      <option name="Build" />
+    </method>
+  </configuration>
+</component>

@@ -26,11 +26,14 @@ public static class MauiProgram
         using var jsonConfigStream = new EmbeddedFileProvider(Assembly.GetExecutingAssembly())
             .GetFileInfo("appsettings.json")
             .CreateReadStream();
+#if (MACCATALYST || WINDOWS)
+        var args = Environment.CommandLine.Split(" ").Skip(1).ToArray();
+#endif
         var config = new ConfigurationBuilder()
             .AddJsonStream(jsonConfigStream)
 #if (MACCATALYST || WINDOWS)
+            .AddCommandLine(args)
             .AddEnvironmentVariables()
-            .AddCommandLine(Environment.GetCommandLineArgs())
 #endif
             .Build();
 
