@@ -26,6 +26,20 @@ Original project:
 
 https://github.com/jsuarezruiz/dotnet-maui-samples/tree/main/UsingMessagingCenter
 
+## TodoRealm (MVVM)
+
+Using Realm DB (MongoDB for devices) in Maui:
+- MVVM pattern
+- Realm non-synced (local) database
+- CRUD operations
+
+What is `MongoDB Atlas Device SDK`?  
+https://www.mongodb.com/blog/post/realm-now-part-atlas-platform  
+https://www.mongodb.com/docs/realm/sdk/dotnet/quick-start/
+
+Original sample using Sqlite: https://github.com/dotnet/maui-samples/tree/main/8.0/Data/TodoSQLite
+
+
 ## Author
 
 @peterblazejewicz

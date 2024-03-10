@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TodoRealm.Views.TodoItemPage"
+             xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+             d:BindingContext="TodoItemViewModel">
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                             Spacing="10"
+                             VerticalOptions="StartAndExpand">
+            <Label Text="Name" />
+            <Entry Text="{Binding Item.Name}" />
+            <Label Text="Notes" />
+            <Entry Text="{Binding Item.Notes}" />
+            <Label Text="Done" />
+            <Switch IsToggled="{Binding Item.Done}" />
+            <Button Text="Save"
+                    Command="{Binding SaveCommand}" />
+            <Button Text="Delete"
+                    Command="{Binding DeleteCommand}" />
+            <Button Text="Cancel"
+                    Command="{Binding CancelCommand}" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
